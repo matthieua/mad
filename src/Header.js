@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import classNames from "classnames/bind";
 import "./Header.sass";
 
 export default class Header extends Component {
@@ -7,22 +9,34 @@ export default class Header extends Component {
       <header>
         <div className="content">
           <ul class="header__links">
-            <li>
-              <a href="#">Tour Dates</a>
+            <li
+              className={classNames({ active: this.props.active === "tour" })}
+            >
+              <Link to="/">Tour Dates</Link>
             </li>
-            <li className="active">
-              <a href="#">Mixes</a>
+            <li
+              className={classNames({ active: this.props.active === "mixes" })}
+            >
+              <Link to="/mixes">Mixes</Link>
             </li>
-            <li>
-              <a href="#">Testimonials</a>
+            <li
+              className={classNames({
+                active: this.props.active === "testimonials"
+              })}
+            >
+              <Link to="/testimonials">Testimonials</Link>
             </li>
-            <li>
-              <a href="#">Equipment</a>
+            <li
+              className={classNames({
+                active: this.props.active === "exquipment"
+              })}
+            >
+              <Link to="/equipment">Equipment</Link>
             </li>
           </ul>
-          <a href="/" className="logo__link">
+          <Link to="/" className="logo__link">
             <img src="./images/logo.png" alt="DJ MAD" />
-          </a>
+          </Link>
           <ul className="header__contacts">
             <li>matt@delac.io</li>
           </ul>

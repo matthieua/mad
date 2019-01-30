@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Background.css";
+import "./Background.sass";
 
 export default class Background extends Component {
   imagePath() {
@@ -8,7 +8,7 @@ export default class Background extends Component {
 
   render() {
     return (
-      <div className="background">
+      <div className={`background background--${this.props.page}`}>
         <img src={this.imagePath()} alt={this.props.page} />
       </div>
     );
